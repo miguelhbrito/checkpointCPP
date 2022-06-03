@@ -12,13 +12,12 @@ int subArraySum(int arr[], int n, int sum)
         // try all subarrays starting with 'i'
         for (j = i + 1; j <= n; j++) {
             if (curr_sum == sum) {
-                cout << "Sum found between indexes "
-                     << i << " and " << j - 1;
+                cout << "Sum found between indexes "<< i << " and " << j - 1<<endl;
                 return 1;
             }
             if (curr_sum > sum || j == n)
                 break;
-            curr_sum = curr_sum + arr[j];
+            curr_sum += arr[j];
         }
     }
  
