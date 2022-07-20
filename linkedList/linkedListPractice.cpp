@@ -73,6 +73,26 @@ void printLinkedListReverse(Node *head){
 	cout<<" "<<head->data<<" ";	
 }
 
+Node* deleteNode(Node *head, int data){
+	Node *current;
+	current = head;
+	
+	if(current->data == data){
+		delete(head);
+		return current->next;
+	}
+
+	while(current->next != NULL){
+		if(current->next->data == data){
+			current->next = current->next->next;
+			return head;
+		}
+		current = current->next;
+	}
+	return head;
+
+}
+
 int main(){
 	
 	// Start with the empty list
@@ -87,6 +107,8 @@ int main(){
 	cout<<"Created linked list: ";
 	printLinkedListNormal(head);
 	cout<<endl;
+
+	head = deleteNode(head, 1);
 
 	cout<<"Print reverse linked list: ";
 	printLinkedListReverse(head);
