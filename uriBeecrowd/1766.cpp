@@ -62,7 +62,7 @@ int main(){
 	float altura;
 	string name;
 
-	for(int i=0; i<T; i++){
+	for(int i=1; i<=T; i++){
 		cin>>totalRenas>>usarRenas;
 		for(int j=0; j<totalRenas;j++){
 			cin>>name>>peso>>idade>>altura;
@@ -72,11 +72,12 @@ int main(){
 
 		sort(vecRenas.begin(), vecRenas.end(), comparar);
 
-		cout<<"CERNARIO {"<<i<<"}"<<endl;
+		cout<<"CENARIO {"<<i<<"}"<<endl;
 		
 		for(int j=0; j<usarRenas; j++){
-			cout<<j+1<<" - "<<vecRenas[i].name<<endl;
+			cout<<j+1<<" - "<<vecRenas[j].name<<endl;
 		}
+		vecRenas.clear();
 	}
 	return 0;
 }
